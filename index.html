@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assetz Miru and Miyo | 3 BHK Apartments | Yelahanka, Bangalore</title>
+  <meta name="description" content="Assetz Miru and Miyo - Premium 3 BHK Apartments in Yelahanka, North Bangalore. Starting ₹1.77 Cr. RERA: PRM/KA/RERA/1251/472/PR/050526/008621">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Remix Icons 4.5.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Glide.js 3.6.2 -->
+  <link href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.core.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.theme.min.css" rel="stylesheet">
+
+  <!-- GLightbox 3.3.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- intl-tel-input 24.7.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/css/intlTelInput.css" rel="stylesheet">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --clr-p: #006b9f;
+      --clr-s: #006b9f;
+      --clr-t: #ffffff;
+      --nav-height: 80px;
+      --font: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background-color: #e2e6e8;
+      margin: 0;
+      padding: 0;
+      padding-bottom: 60px;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+
+    /* ===== LAYOUT GRID ===== */
+    .lp-layout {
+      position: relative;
+    }
+
+    @media screen and (min-width: 800px) {
+      .lp-layout {
+        display: grid;
+        grid-template-columns: 78% 22%;
+        grid-template-areas:
+          "nav sidebar"
+          "banner sidebar"
+          "main ."
+          "footer .";
+      }
+      body { padding-bottom: 0; }
+    }
+
+    @media screen and (min-width: 1150px) {
+      .lp-layout {
+        grid-template-columns: 82% 18%;
+      }
+      :root {
+        --nav-height: calc(4.5vw + 1px);
+      }
+    }
+
+    /* ===== NAVIGATION ===== */
+    .lp-nav {
+      grid-area: nav;
+      background-color: #fff;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
+
+    .lp-nav .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lp-nav .brand img {
+      height: 45px;
+      width: auto;
+    }
+
+    @media screen and (min-width: 1150px) {
+      .lp-nav .brand img {
+        height: calc(3vw + 1px);
+      }
+    }
+
+    .lp-nav .brand-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--clr-p);
+      line-height: 1.2;
+    }
+
+    .lp-nav .brand-sub {
+      font-size: 11px;
+      font-weight: 400;
+      color: #666;
+    }
+
+    .lp-nav .nav-links {
+      display: none;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media screen and (min-width: 800px) {
+      .lp-nav .nav-links {
+        display: flex;
+      }
+    }
+
+    .lp-nav .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: #333;
+      padding: 6px 10px;
+      display: block;
+      transition: color .2s;
+    }
+
+    .lp-nav .nav-links a:hover {
+      color: var(--clr-p);
+    }
+
+    .lp-nav .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lp-nav .nav-phone {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--clr-p);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .lp-nav .nav-phone i {
+      font-size: 16px;
+    }
+
+    /* ===== BUTTON CTA ===== */
+    .btn-cta {
+      background-image: linear-gradient(to left, var(--clr-s), var(--clr-p), var(--clr-s));
+      color: var(--clr-t) !important;
+      border-radius: 10px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.5), 0 0 0 5px rgba(0,0,0,.2), 0 0 10px 10px rgba(0,0,0,.1);
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      transition: opacity .2s;
+    }
+
+    .btn-cta:hover {
+      opacity: 0.9;
+      color: var(--clr-t) !important;
+    }
+
+    /* ===== BANNER ===== */
+    .lp-banner {
+      grid-area: banner;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner {
+      position: relative;
+      height: 320px;
+    }
+
+    @media screen and (min-width: 800px) {
+      .banner {
+        height: calc(100dvh - var(--nav-height));
+      }
+    }
+
+    .banner .glide__track,
+    .banner .glide__slides,
+    .banner .glide__slide,
+    .banner .glide__slide img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Info box overlaid on banner (desktop) */
+    .info-box {
+      background-color: rgba(255,255,255,0.97);
+      padding: 12px;
+      border-radius: 0 0 8px 0;
+    }
+
+    @media screen and (min-width: 800px) {
+      .info-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 350px;
+        z-index: 10;
+        border-radius: 0 0 8px 0;
+        max-height: 100%;
+        overflow-y: auto;
+      }
+    }
+
+    @media screen and (min-width: 1150px) {
+      .info-box {
+        width: calc(24vw + 1px);
+      }
+    }
+
+    .info-box .status {
+      background-image: linear-gradient(to left, var(--clr-s), var(--clr-p), var(--clr-s));
+      color: var(--clr-t);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .info-box h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 2px;
+      line-height: 1.2;
+    }
+
+    @media screen and (min-width: 1150px) {
+      .info-box h1 {
+        font-size: calc(1.3vw + 1px);
+      }
+    }
+
+    .info-box .developer {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .info-box .location {
+      font-size: 12px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .info-box .location i {
+      color: var(--clr-p);
+      font-size: 14px;
+    }
+
+    .info-box .price-tag {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--clr-p);
+      margin-bottom: 2px;
+    }
+
+    @media screen and (min-width: 1150px) {
+      .info-box .price-tag {
+        font-size: calc(1.2vw + 1px);
+      }
+    }
+
+    .info-box .price-sub {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .info-box .config-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .info-box .config-item {
+      background: #f1f5f9;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+    }
+
+    .info-box .config-item .label {
+      color: #888;
+      font-weight: 400;
+      display: block;
+      font-size: 10px;
+    }
+
+    .info-box .mb-box {
+      margin-bottom: 10px;
+    }
+
+    .info-box .mb-box ul {
+      background-image: linear-gradient(to left, var(--clr-s), var(--clr-p), var(--clr-s));
+      color: var(--clr-t);
+      border-radius: 6px;
+      padding: 8px 12px 8px 28px;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .info-box .mb-box ul li {
+      margin-bottom: 2px;
+    }
+
+    .info-box .info-btn-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .info-box .info-btn-row .btn-cta {
+      flex: 1;
+      font-size: 13px;
+      padding: 8px 10px;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .lp-sidebar {
+      grid-area: sidebar;
+      background: #fff;
+      padding: 15px 12px;
+      position: sticky;
+      top: var(--nav-height);
+      height: fit-content;
+      max-height: calc(100dvh - var(--nav-height));
+      overflow-y: auto;
+    }
+
+    @media screen and (max-width: 799px) {
+      .lp-sidebar { display: none; }
+    }
+
+    .lp-sidebar .og-box {
+      background: linear-gradient(135deg, #fffde7, #fff9c4);
+      border: 1px solid #f0d000;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: #5a4000;
+    }
+
+    .lp-sidebar .og-box .og-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #b8860b;
+      margin-bottom: 4px;
+    }
+
+    .lp-sidebar h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--clr-p);
+    }
+
+    .sidebar-form .form-group {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-form input,
+    .sidebar-form select,
+    .sidebar-form textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 13px;
+      font-family: var(--font);
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .sidebar-form input:focus,
+    .sidebar-form select:focus,
+    .sidebar-form textarea:focus {
+      border-color: var(--clr-p);
+    }
+
+    .sidebar-form .iti {
+      width: 100%;
+    }
+
+    .sidebar-form .iti input {
+      width: 100%;
+    }
+
+    .sidebar-form .btn-cta {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    .sidebar-form .form-note {
+      font-size: 10px;
+      color: #888;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .sidebar-form .privacy-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-form .privacy-check input[type="checkbox"] {
+      width: auto;
+      margin-top: 2px;
+    }
+
+    .sidebar-pickup {
+      margin-top: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .sidebar-pickup img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .lp-main {
+      grid-area: main;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    .lp-section {
+      padding: 30px 20px;
+      background: #fff;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-image: linear-gradient(to right, var(--clr-p), var(--clr-s));
+      border-radius: 2px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
+      margin-top: 8px;
+    }
+
+    @media screen and (min-width: 1150px) {
+      .section-title {
+        font-size: calc(1.4vw + 1px);
+      }
+      .lp-section {
+        padding: calc(2vw + 1px) calc(1.5vw + 1px);
+      }
+    }
+
+    /* ===== OVERVIEW ===== */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .overview-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .ov-item {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 14px 10px;
+      text-align: center;
+      border: 1px solid #e8edf2;
+    }
+
+    .ov-item i {
+      font-size: 28px;
+      color: var(--clr-p);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .ov-item .ov-val {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .ov-item .ov-lbl {
+      font-size: 11px;
+      color: #888;
+    }
+
+    /* ===== HIGHLIGHTS ===== */
+    .highlight-1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .highlight-1 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 8px;
+      border-left: 3px solid var(--clr-p);
+    }
+
+    .hl-item i {
+      font-size: 22px;
+      color: var(--clr-p);
+      flex-shrink: 0;
+    }
+
+    .hl-item .hl-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .hl-item .hl-sub {
+      font-size: 11px;
+      color: #888;
+    }
+
+    .highlight-2 {
+      background: linear-gradient(to left, var(--clr-s), var(--clr-p), var(--clr-s));
+      color: #fff;
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+
+    .highlight-2 h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .highlight-2 ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .highlight-2 ul li {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    /* ===== PRICING ===== */
+    .price-card {
+      border: 1px solid #e2e6e8;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .price-card .pc-header {
+      background-image: linear-gradient(to left, var(--clr-s), var(--clr-p), var(--clr-s));
+      color: #fff;
+      padding: 12px 15px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .price-card .pc-body {
+      padding: 15px;
+    }
+
+    .price-card .pc-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 13px;
+    }
+
+    .price-card .pc-row:last-child {
+      border-bottom: none;
+    }
+
+    .price-card .pc-row .label {
+      color: #666;
+    }
+
+    .price-card .pc-row .value {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .price-card .pc-footer {
+      background: #f8fafc;
+      padding: 12px 15px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--clr-p);
+      text-align: center;
+    }
+
+    .price-cta {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* ===== AMENITIES ===== */
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .amenity-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media screen and (min-width: 800px) {
+      .amenity-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    .am-item {
+      text-align: center;
+      padding: 12px 6px;
+      background: #f8fafc;
+      border-radius: 8px;
+      border: 1px solid #e8edf2;
+    }
+
+    .am-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      margin-bottom: 6px;
+    }
+
+    .am-item .am-name {
+      font-size: 11px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .gallery-grid a {
+      display: block;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+
+    .gallery-grid a:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ===== LOCATION ===== */
+    .location-map {
+      width: 100%;
+      height: 350px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .loc-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .loc-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .loc-cat {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 14px;
+      border-top: 3px solid var(--clr-p);
+    }
+
+    .loc-cat h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--clr-p);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .loc-cat ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .loc-cat ul li {
+      font-size: 12px;
+      color: #555;
+      padding: 4px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .loc-cat ul li:last-child {
+      border-bottom: none;
+    }
+
+    .loc-cat ul li .dist {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    /* ===== SITE VISIT FORM ===== */
+    .site-visit-section {
+      background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
+    }
+
+    .sv-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .sv-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .sv-form .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .sv-form input,
+    .sv-form select,
+    .sv-form textarea {
+      width: 100%;
+      border: 1px solid #cdd8e0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-family: var(--font);
+      outline: none;
+      background: #fff;
+    }
+
+    .sv-form input:focus,
+    .sv-form select:focus,
+    .sv-form textarea:focus {
+      border-color: var(--clr-p);
+    }
+
+    .sv-form .iti {
+      width: 100%;
+    }
+
+    .sv-form .iti input {
+      width: 100%;
+    }
+
+    .sv-form .submit-row {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .sv-form .btn-cta {
+      padding: 12px 40px;
+      font-size: 15px;
+    }
+
+    .sv-form .form-note {
+      font-size: 11px;
+      color: #777;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-agent {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .about-agent .agent-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .about-agent .agent-info h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+
+    .about-agent .agent-info p {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .about-agent .agent-contact {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .about-agent .agent-contact a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--clr-p);
+      color: #fff;
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ===== FOOTER ===== */
+    .lp-footer {
+      grid-area: footer;
+      background: #fff;
+      padding: 20px;
+      border-top: 1px solid #e2e6e8;
+    }
+
+    .footer-rera {
+      font-size: 11px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .footer-disclaimer {
+      font-size: 10px;
+      color: #999;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+
+    /* ===== MOBILE BOTTOM BAR ===== */
+    .mobile-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      z-index: 999;
+      background: #fff;
+      border-top: 1px solid #ddd;
+    }
+
+    @media screen and (min-width: 800px) {
+      .mobile-bottom-bar { display: none; }
+    }
+
+    .mobile-bottom-bar a {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 5px;
+      font-size: 11px;
+      font-weight: 600;
+      gap: 3px;
+    }
+
+    .mobile-bottom-bar a.bar-call {
+      background: var(--clr-p);
+      color: #fff;
+    }
+
+    .mobile-bottom-bar a.bar-enquire {
+      background: #fff;
+      color: var(--clr-p);
+      border-right: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+    }
+
+    .mobile-bottom-bar a.bar-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+
+    .mobile-bottom-bar a i {
+      font-size: 18px;
+    }
+
+    /* ===== GLIDE OVERRIDES ===== */
+    .glide__arrow {
+      background: rgba(0,0,0,.5);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .glide__arrow--left { left: 10px; }
+    .glide__arrow--right { right: 10px; }
+
+    .glide__bullets {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+
+    .glide__bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background .2s;
+    }
+
+    .glide__bullet--active {
+      background: #fff;
+    }
+
+    /* ===== BLURRED IMAGE WITH CTA ===== */
+    .bd-img-wrap {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .bd-img.blur {
+      filter: blur(6px);
+      transform: scale(1.05);
+      width: 100%;
+    }
+
+    .cta-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: rgba(0,0,0,.35);
+      padding: 20px;
+    }
+
+    .cta-text h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    }
+
+    /* ===== TABS ===== */
+    .nav-tabs .nav-link {
+      font-size: 13px;
+      color: #555;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .nav-tabs .nav-link.active {
+      color: var(--clr-p);
+      font-weight: 700;
+      border-bottom: 2px solid var(--clr-p);
+    }
+
+    /* ===== RERA TEXT ===== */
+    .rera-text {
+      font-size: 11px;
+      color: #777;
+      margin-top: 15px;
+    }
+
+    /* success message */
+    .form-success {
+      display: none;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== LAYOUT WRAPPER ========== -->
+<div class="lp-layout">
+
+  <!-- ========== NAV ========== -->
+  <nav class="lp-nav">
+    <div class="brand">
+      <img src="https://assetzmirumiyoyelahanka.com/img/logo.png" alt="Assetz Miru and Miyo" onerror="this.style.display='none'">
+      <div>
+        <div class="brand-text">Assetz Miru &amp; Miyo</div>
+        <div class="brand-sub">Yelahanka, Bangalore</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:8147476911" class="nav-phone">
+        <i class="ri-phone-line"></i>
+        <span class="d-none d-md-inline">81474 76911</span>
+      </a>
+      <a href="#enquiry" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta d-none d-sm-inline-block">Enquire Now</a>
+    </div>
+  </nav>
+
+  <!-- ========== BANNER ========== -->
+  <section class="lp-banner">
+    <div class="banner">
+      <!-- Glide Slider -->
+      <div class="glide" id="mainSlider">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="https://assetzmirumiyoyelahanka.com/img/banner1.jpg" alt="Assetz Miru and Miyo Banner 1" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner.jpg'">
+            </li>
+            <li class="glide__slide">
+              <img src="https://assetzmirumiyoyelahanka.com/img/banner2.jpg" alt="Assetz Miru and Miyo Banner 2" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner1.jpg'">
+            </li>
+            <li class="glide__slide">
+              <img src="https://assetzmirumiyoyelahanka.com/img/banner3.jpg" alt="Assetz Miru and Miyo Banner 3" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner2.jpg'">
+            </li>
+            <li class="glide__slide">
+              <img src="https://assetzmirumiyoyelahanka.com/img/banner4.jpg" alt="Assetz Miru and Miyo Banner 4" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner3.jpg'">
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="ri-arrow-left-s-line"></i></button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="ri-arrow-right-s-line"></i></button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+          <button class="glide__bullet" data-glide-dir="=3"></button>
+        </div>
+      </div>
+
+      <!-- Info Box overlaid on banner -->
+      <div class="info-box">
+        <div class="status">Now Selling</div>
+        <h1>Assetz Miru &amp; Miyo</h1>
+        <div class="developer">by Assetz Property Group</div>
+        <div class="location">
+          <i class="ri-map-pin-2-line"></i>
+          Yelahanka, North Bangalore
+        </div>
+        <div class="price-tag">₹1.77 Cr* Onwards</div>
+        <div class="price-sub">*All Inclusive Price | Limited Units Available</div>
+        <div class="config-row">
+          <div class="config-item">
+            3 BHK
+            <span class="label">Config</span>
+          </div>
+          <div class="config-item">
+            1765–2007
+            <span class="label">Sq.Ft.</span>
+          </div>
+          <div class="config-item">
+            G+17
+            <span class="label">Towers</span>
+          </div>
+          <div class="config-item">
+            RERA
+            <span class="label">Approved</span>
+          </div>
+        </div>
+        <div class="mb-box">
+          <ul>
+            <li>Pre-Launch Special Price</li>
+            <li>Zero GST on Land Component</li>
+            <li>Free Modular Kitchen</li>
+            <li>Flexible Payment Plan</li>
+          </ul>
+        </div>
+        <div class="info-btn-row">
+          <a href="tel:8147476911" class="btn-cta">
+            <i class="ri-phone-line"></i> Call Now
+          </a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta">
+            Get Best Price
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile info box shown below banner on mobile -->
+    <div class="d-md-none px-3 py-3 bg-white mb-2">
+      <div class="status">Now Selling</div>
+      <h2 style="font-size:20px;font-weight:700;color:#1a1a1a;margin:6px 0 3px;">Assetz Miru &amp; Miyo</h2>
+      <p style="font-size:13px;color:#666;margin:0 0 6px;">by Assetz Property Group | Yelahanka, Bangalore</p>
+      <div style="font-size:20px;font-weight:700;color:var(--clr-p);margin-bottom:4px;">₹1.77 Cr* Onwards</div>
+      <p style="font-size:11px;color:#888;margin-bottom:10px;">*All Inclusive | 3 BHK Apartments</p>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta d-block text-center py-2">Get Best Price &amp; Free Site Visit</a>
+    </div>
+  </section>
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="lp-sidebar">
+    <!-- Offer box -->
+    <div class="og-box">
+      <div class="og-title">🎁 Limited Time Offer</div>
+      Pre-launch pricing available for first 20 bookings. Book now to lock your price!
+    </div>
+
+    <h4>Get Free Consultation</h4>
+
+    <form class="sidebar-form" id="sidebarForm" onsubmit="submitForm(event, this)">
+      <input type="hidden" name="_subject" value="New Lead - Assetz Miru Miyo">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Full Name *" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="sidebarPhone" name="phone" placeholder="Mobile Number *" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email Address">
+      </div>
+      <div class="form-group">
+        <select name="configuration">
+          <option value="">Select Configuration</option>
+          <option value="3 BHK">3 BHK</option>
+        </select>
+      </div>
+      <div class="privacy-check">
+        <input type="checkbox" id="sidebarPrivacy" checked>
+        <label for="sidebarPrivacy">I agree to be contacted via call/SMS/WhatsApp regarding this property.</label>
+      </div>
+      <button type="submit" class="btn-cta">Get Best Price</button>
+      <p class="form-note">🔒 Your information is 100% secure</p>
+      <div class="form-success" id="sidebarSuccess">Thank you! We'll contact you shortly.</div>
+    </form>
+
+    <!-- Free Site Visit pickup image -->
+    <div class="sidebar-pickup">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+        <img src="https://assetzmirumiyoyelahanka.com/img/free-site-visit.jpg"
+             alt="Free Site Visit Pickup"
+             onerror="this.parentElement.innerHTML='<div class=\'text-center p-3 bg-light rounded\' style=\'font-size:13px;color:var(--clr-p);font-weight:600;\'>📍 Free Site Visit Available<br><small>We pick you up & drop you off</small></div>'">
+      </a>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="lp-main">
+
+    <!-- OVERVIEW -->
+    <section class="lp-section" id="overview">
+      <h2 class="section-title">Project Overview</h2>
+      <p class="section-sub">Assetz Miru &amp; Miyo — a thoughtfully designed residential community in Yelahanka, North Bangalore.</p>
+      <div class="overview-grid">
+        <div class="ov-item">
+          <i class="ri-building-2-line"></i>
+          <div class="ov-val">3 BHK</div>
+          <div class="ov-lbl">Apartment Type</div>
+        </div>
+        <div class="ov-item">
+          <i class="ri-ruler-line"></i>
+          <div class="ov-val">1765–2007 sq.ft</div>
+          <div class="ov-lbl">Super Built-up Area</div>
+        </div>
+        <div class="ov-item">
+          <i class="ri-price-tag-3-line"></i>
+          <div class="ov-val">₹1.77 Cr*</div>
+          <div class="ov-lbl">Starting Price</div>
+        </div>
+        <div class="ov-item">
+          <i class="ri-map-pin-line"></i>
+          <div class="ov-val">Yelahanka</div>
+          <div class="ov-lbl">Location</div>
+        </div>
+        <div class="ov-item">
+          <i class="ri-home-8-line"></i>
+          <div class="ov-val">G+17 Floors</div>
+          <div class="ov-lbl">Tower Height</div>
+        </div>
+        <div class="ov-item">
+          <i class="ri-bank-line"></i>
+          <div class="ov-val">Loan Available</div>
+          <div class="ov-lbl">Home Loan</div>
+        </div>
+        <div class="ov-item">
+          <i class="ri-shield-check-line"></i>
+          <div class="ov-val">RERA Approved</div>
+          <div class="ov-lbl">Registration</div>
+        </div>
+        <div class="ov-item">
+          <i class="ri-calendar-check-line"></i>
+          <div class="ov-val">Dec 2027</div>
+          <div class="ov-lbl">Possession</div>
+        </div>
+      </div>
+      <p class="rera-text">RERA: PRM/KA/RERA/1251/472/PR/050526/008621</p>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="lp-section" id="highlights">
+      <h2 class="section-title">Why Assetz Miru &amp; Miyo?</h2>
+      <p class="section-sub">Key highlights that make this project stand out in Bangalore's real estate landscape.</p>
+
+      <div class="highlight-1">
+        <div class="hl-item">
+          <i class="ri-map-pin-2-fill"></i>
+          <div>
+            <div class="hl-text">Prime Yelahanka Location</div>
+            <div class="hl-sub">NH-44 connectivity, 5 min from BIAL</div>
+          </div>
+        </div>
+        <div class="hl-item">
+          <i class="ri-building-4-line"></i>
+          <div>
+            <div class="hl-text">Trusted Developer</div>
+            <div class="hl-sub">Assetz Property Group — 17+ years</div>
+          </div>
+        </div>
+        <div class="hl-item">
+          <i class="ri-leaf-line"></i>
+          <div>
+            <div class="hl-text">Green &amp; Sustainable</div>
+            <div class="hl-sub">IGBC Green Certified Project</div>
+          </div>
+        </div>
+        <div class="hl-item">
+          <i class="ri-shield-check-line"></i>
+          <div>
+            <div class="hl-text">All-Inclusive Price</div>
+            <div class="hl-sub">No hidden charges, GST included</div>
+          </div>
+        </div>
+        <div class="hl-item">
+          <i class="ri-home-smile-line"></i>
+          <div>
+            <div class="hl-text">Spacious Residences</div>
+            <div class="hl-sub">1765–2007 sq.ft 3 BHK homes</div>
+          </div>
+        </div>
+        <div class="hl-item">
+          <i class="ri-car-line"></i>
+          <div>
+            <div class="hl-text">Excellent Connectivity</div>
+            <div class="hl-sub">Nearest Metro: Yelahanka Junction</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-2">
+        <h4>Special Launch Benefits</h4>
+        <ul>
+          <li>Pre-launch price lock for early registrations</li>
+          <li>Free modular kitchen worth ₹3.5 Lakhs</li>
+          <li>Zero GST on land component</li>
+          <li>Flexible payment plan — 10:80:10</li>
+          <li>Assured rental income post-possession</li>
+          <li>Preferred allotment for registered buyers</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="lp-section" id="pricing">
+      <h2 class="section-title">Pricing &amp; Floor Plans</h2>
+      <p class="section-sub">Transparent pricing — all inclusive with no hidden charges.</p>
+
+      <!-- Pricing Cards (Glide Slider on mobile) -->
+      <div class="row g-3 mb-4">
+        <div class="col-12 col-sm-6">
+          <div class="price-card">
+            <div class="pc-header">3 BHK — Type A</div>
+            <div class="pc-body">
+              <div class="pc-row">
+                <span class="label">Super Built-up Area</span>
+                <span class="value">1765 sq.ft</span>
+              </div>
+              <div class="pc-row">
+                <span class="label">Carpet Area</span>
+                <span class="value">~1150 sq.ft</span>
+              </div>
+              <div class="pc-row">
+                <span class="label">Floor Rise</span>
+                <span class="value">As Applicable</span>
+              </div>
+              <div class="pc-row">
+                <span class="label">Parking</span>
+                <span class="value">1 Covered</span>
+              </div>
+            </div>
+            <div class="pc-footer">₹1.77 Cr* All Inclusive</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="price-card">
+            <div class="pc-header">3 BHK — Type B</div>
+            <div class="pc-body">
+              <div class="pc-row">
+                <span class="label">Super Built-up Area</span>
+                <span class="value">2007 sq.ft</span>
+              </div>
+              <div class="pc-row">
+                <span class="label">Carpet Area</span>
+                <span class="value">~1305 sq.ft</span>
+              </div>
+              <div class="pc-row">
+                <span class="label">Floor Rise</span>
+                <span class="value">As Applicable</span>
+              </div>
+              <div class="pc-row">
+                <span class="label">Parking</span>
+                <span class="value">1 Covered</span>
+              </div>
+            </div>
+            <div class="pc-footer">Price on Request</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floor Plan Images (blurred with CTA) -->
+      <h4 style="font-size:16px;font-weight:700;color:#1a1a1a;margin-bottom:15px;">Floor Plans</h4>
+      <div class="row g-3">
+        <div class="col-12 col-sm-6">
+          <div class="bd-img-wrap">
+            <img src="https://assetzmirumiyoyelahanka.com/img/floorplan1.jpg" class="bd-img blur" alt="3 BHK Floor Plan Type A" onerror="this.src='https://via.placeholder.com/600x400?text=Floor+Plan+A'">
+            <div class="cta-text">
+              <h4>3 BHK — Type A Floor Plan</h4>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta">Download Floor Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="bd-img-wrap">
+            <img src="https://assetzmirumiyoyelahanka.com/img/floorplan2.jpg" class="bd-img blur" alt="3 BHK Floor Plan Type B" onerror="this.src='https://via.placeholder.com/600x400?text=Floor+Plan+B'">
+            <div class="cta-text">
+              <h4>3 BHK — Type B Floor Plan</h4>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta">Download Floor Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-cta mt-4">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta px-5 py-3" style="font-size:15px;">
+          Get Detailed Cost Sheet
+        </a>
+      </div>
+    </section>
+
+    <!-- SITE FLOOR PLAN / MASTER PLAN -->
+    <section class="lp-section" id="masterplan">
+      <h2 class="section-title">Master Plan</h2>
+      <p class="section-sub">Thoughtfully planned layout for maximum space utilization and greenery.</p>
+      <div class="bd-img-wrap">
+        <img src="https://assetzmirumiyoyelahanka.com/img/masterplan.jpg" class="bd-img blur" alt="Assetz Miru Miyo Master Plan" onerror="this.src='https://via.placeholder.com/900x500?text=Master+Plan'">
+        <div class="cta-text">
+          <h4>View Master Plan</h4>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta">Download Master Plan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMENITIES -->
+    <section class="lp-section" id="amenities">
+      <h2 class="section-title">World-Class Amenities</h2>
+      <p class="section-sub">60+ amenities designed for a premium lifestyle.</p>
+      <div class="amenity-grid">
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/clubhouse.png" alt="Clubhouse" onerror="this.style.display='none'"><i class="ri-community-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Clubhouse</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/pool.png" alt="Swimming Pool" onerror="this.style.display='none'"><i class="ri-water-percent-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Swimming Pool</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/gym.png" alt="Gym" onerror="this.style.display='none'"><i class="ri-run-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Gymnasium</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/kids.png" alt="Kids Play Area" onerror="this.style.display='none'"><i class="ri-user-smile-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Kids Play</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/badminton.png" alt="Badminton" onerror="this.style.display='none'"><i class="ri-tennis-ball-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Badminton</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/jogging.png" alt="Jogging Track" onerror="this.style.display='none'"><i class="ri-footprint-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Jogging Track</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/garden.png" alt="Garden" onerror="this.style.display='none'"><i class="ri-plant-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Landscape Garden</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/yoga.png" alt="Yoga" onerror="this.style.display='none'"><i class="ri-heart-pulse-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Yoga Deck</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/indoor.png" alt="Indoor Games" onerror="this.style.display='none'"><i class="ri-gamepad-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Indoor Games</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/party.png" alt="Party Hall" onerror="this.style.display='none'"><i class="ri-goblet-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Party Hall</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/library.png" alt="Library" onerror="this.style.display='none'"><i class="ri-book-open-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Library</div></div>
+        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/basketball.png" alt="Basketball" onerror="this.style.display='none'"><i class="ri-basketball-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Basketball</div></div>
+        <div class="am-item"><i class="ri-car-washing-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Car Washing Bay</div></div>
+        <div class="am-item"><i class="ri-video-chat-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Mini Theatre</div></div>
+        <div class="am-item"><i class="ri-store-2-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Convenience Store</div></div>
+        <div class="am-item"><i class="ri-shield-user-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">24/7 Security</div></div>
+        <div class="am-item"><i class="ri-building-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Co-working Space</div></div>
+        <div class="am-item"><i class="ri-spa-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Spa</div></div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="lp-section" id="gallery">
+      <h2 class="section-title">Photo Gallery</h2>
+      <p class="section-sub">Take a visual tour of Assetz Miru &amp; Miyo.</p>
+      <div class="gallery-grid">
+        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g1.jpg" class="glightbox" data-gallery="gallery1" data-title="Assetz Miru Miyo">
+          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g1.jpg" alt="Gallery 1" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner1.jpg'">
+        </a>
+        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g2.jpg" class="glightbox" data-gallery="gallery1" data-title="Clubhouse">
+          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g2.jpg" alt="Gallery 2" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner2.jpg'">
+        </a>
+        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g3.jpg" class="glightbox" data-gallery="gallery1" data-title="Swimming Pool">
+          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g3.jpg" alt="Gallery 3" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner3.jpg'">
+        </a>
+        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g4.jpg" class="glightbox" data-gallery="gallery1" data-title="Apartment Interior">
+          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g4.jpg" alt="Gallery 4" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner4.jpg'">
+        </a>
+        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g5.jpg" class="glightbox" data-gallery="gallery1" data-title="Garden Area">
+          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g5.jpg" alt="Gallery 5" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner1.jpg'">
+        </a>
+        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g6.jpg" class="glightbox" data-gallery="gallery1" data-title="Lobby">
+          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g6.jpg" alt="Gallery 6" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner2.jpg'">
+        </a>
+      </div>
+    </section>
+
+    <!-- LOCATION MAP -->
+    <section class="lp-section" id="location">
+      <h2 class="section-title">Location</h2>
+      <p class="section-sub">Strategically located in Yelahanka — one of Bangalore's fastest growing areas.</p>
+      <div class="location-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.6396!2d77.6008!3d13.1004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19246db97ebb%3A0x6c3a9e3b37c30bae!2sYelahanka%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          title="Assetz Miru Miyo Location Map">
+        </iframe>
+      </div>
+
+      <!-- Location List -->
+      <div class="loc-list">
+        <div class="loc-cat">
+          <h5><i class="ri-flight-takeoff-line"></i> Connectivity</h5>
+          <ul>
+            <li><span>Kempegowda Int'l Airport</span><span class="dist">~15 km</span></li>
+            <li><span>BIAL Expressway</span><span class="dist">~3 km</span></li>
+            <li><span>NH-44 (National Highway)</span><span class="dist">~1 km</span></li>
+            <li><span>Yelahanka Railway Station</span><span class="dist">~3 km</span></li>
+          </ul>
+        </div>
+        <div class="loc-cat">
+          <h5><i class="ri-school-line"></i> Education</h5>
+          <ul>
+            <li><span>Ryan International School</span><span class="dist">~2 km</span></li>
+            <li><span>Canadian International School</span><span class="dist">~5 km</span></li>
+            <li><span>Jain University</span><span class="dist">~7 km</span></li>
+            <li><span>Reva University</span><span class="dist">~8 km</span></li>
+          </ul>
+        </div>
+        <div class="loc-cat">
+          <h5><i class="ri-hospital-line"></i> Healthcare</h5>
+          <ul>
+            <li><span>Columbia Asia Hospital</span><span class="dist">~5 km</span></li>
+            <li><span>Aster CMI Hospital</span><span class="dist">~10 km</span></li>
+            <li><span>Sparsh Hospital</span><span class="dist">~8 km</span></li>
+          </ul>
+        </div>
+        <div class="loc-cat">
+          <h5><i class="ri-store-line"></i> Shopping</h5>
+          <ul>
+            <li><span>Elements Mall</span><span class="dist">~12 km</span></li>
+            <li><span>Esteem Mall</span><span class="dist">~10 km</span></li>
+            <li><span>Phoenix Mall of Asia</span><span class="dist">~14 km</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SITE VISIT FORM -->
+    <section class="lp-section site-visit-section" id="site-visit">
+      <h2 class="section-title">Book a Free Site Visit</h2>
+      <p class="section-sub">Schedule a visit at your convenience. We provide free pickup and drop.</p>
+
+      <form class="sv-form" id="siteVisitForm" onsubmit="submitForm(event, this)">
+        <input type="hidden" name="_subject" value="Site Visit Request - Assetz Miru Miyo">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="form-row mb-3">
+          <input type="text" name="name" placeholder="Full Name *" required>
+          <input type="tel" id="svPhone" name="phone" placeholder="Mobile Number *" required>
+        </div>
+        <div class="form-row mb-3">
+          <input type="email" name="email" placeholder="Email Address">
+          <input type="date" name="visit_date" min="">
+        </div>
+        <div class="form-row mb-3">
+          <select name="preferred_time">
+            <option value="">Preferred Time</option>
+            <option>Morning (9 AM – 12 PM)</option>
+            <option>Afternoon (12 PM – 4 PM)</option>
+            <option>Evening (4 PM – 7 PM)</option>
+          </select>
+          <select name="configuration">
+            <option value="">Interested In</option>
+            <option>3 BHK</option>
+          </select>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="btn-cta">Book Free Site Visit</button>
+        </div>
+        <p class="form-note">📍 Free pickup and drop service available | 🔒 100% Privacy Guaranteed</p>
+        <div class="form-success" id="svSuccess">Thank you! Our team will contact you to confirm the visit.</div>
+      </form>
+    </section>
+
+    <!-- ABOUT AGENT -->
+    <section class="lp-section" id="about">
+      <h2 class="section-title">About Mrunalini Estates</h2>
+      <p class="section-sub">Your trusted real estate partner in Bangalore.</p>
+      <div class="about-agent">
+        <div class="agent-info">
+          <h4>Mrunalini Estates</h4>
+          <p>We are an authorized channel partner for Assetz Miru &amp; Miyo. Our team of experienced real estate professionals will guide you through the entire home buying journey — from site visits to documentation and loan assistance.</p>
+          <p><strong>Why buy through us?</strong> — Best price guaranteed, No brokerage fees, End-to-end support, Home loan assistance from leading banks.</p>
+          <div class="agent-contact">
+            <a href="tel:8147476911">
+              <i class="ri-phone-line"></i> 81474 76911
+            </a>
+            <a href="https://wa.me/918147476911?text=Hi%2C%20I%20am%20interested%20in%20Assetz%20Miru%20%26%20Miyo%2C%20Yelahanka" target="_blank" style="background:#25d366;">
+              <i class="ri-whatsapp-line"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="lp-footer">
+      <div class="footer-rera">
+        <strong>RERA Registration:</strong> PRM/KA/RERA/1251/472/PR/050526/008621
+      </div>
+      <div class="footer-disclaimer">
+        <strong>Disclaimer:</strong> All details mentioned are indicative and subject to change without prior notice. Prices, specifications, and availability are subject to change. Floor plan images, amenity images, and renders are artist's impressions and may differ from actual product. This is not a legal offering document. Please contact our sales team for the latest information. All disputes shall be subject to Bangalore jurisdiction only.
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Mrunalini Estates. All rights reserved.</span>
+        <span>
+          <a href="tel:8147476911" style="color:var(--clr-p);font-weight:600;">81474 76911</a>
+          &nbsp;|&nbsp;
+          <a href="mailto:mrunalini.estates@gmail.com" style="color:var(--clr-p);">mrunalini.estates@gmail.com</a>
+        </span>
+      </div>
+    </footer>
+
+  </main>
+</div>
+<!-- END .lp-layout -->
+
+<!-- ========== MOBILE BOTTOM BAR ========== -->
+<div class="mobile-bottom-bar">
+  <a href="tel:8147476911" class="bar-call">
+    <i class="ri-phone-fill"></i>
+    Call
+  </a>
+  <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="bar-enquire">
+    <i class="ri-mail-fill"></i>
+    Enquire
+  </a>
+  <a href="https://wa.me/918147476911?text=Hi%2C%20I%20am%20interested%20in%20Assetz%20Miru%20%26%20Miyo%2C%20Yelahanka" target="_blank" class="bar-whatsapp">
+    <i class="ri-whatsapp-fill"></i>
+    WhatsApp
+  </a>
+</div>
+
+<!-- ========== ENQUIRY MODAL ========== -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:12px;overflow:hidden;">
+      <div class="modal-header" style="background-image:linear-gradient(to left,var(--clr-s),var(--clr-p),var(--clr-s));color:#fff;border:none;">
+        <h5 class="modal-title" id="enquiryModalLabel" style="font-weight:700;">Get Best Price &amp; Free Consultation</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" style="padding:20px;">
+        <p style="font-size:13px;color:#555;margin-bottom:15px;">Fill in the details below and our expert will contact you within 30 minutes.</p>
+        <form id="modalForm" onsubmit="submitForm(event, this)">
+          <input type="hidden" name="_subject" value="Enquiry - Assetz Miru Miyo">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Full Name *" required style="border-radius:8px;font-family:var(--font);">
+          </div>
+          <div class="mb-3">
+            <input type="tel" id="modalPhone" name="phone" class="form-control" placeholder="Mobile Number *" required style="border-radius:8px;font-family:var(--font);">
+          </div>
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email Address" style="border-radius:8px;font-family:var(--font);">
+          </div>
+          <div class="mb-3">
+            <select name="configuration" class="form-select" style="border-radius:8px;font-family:var(--font);">
+              <option value="">Select Configuration</option>
+              <option value="3 BHK">3 BHK</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-cta w-100 py-2" style="font-size:15px;border-radius:8px;">Get Best Price</button>
+          <p style="font-size:10px;color:#aaa;text-align:center;margin-top:8px;">🔒 Your information is 100% confidential</p>
+          <div class="form-success" id="modalSuccess">Thank you! Our expert will contact you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SCRIPTS ========== -->
+<!-- Bootstrap 5.3.3 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Glide.js 3.6.2 -->
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js"></script>
+
+<!-- GLightbox 3.3.0 -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+
+<!-- intl-tel-input 24.7.0 -->
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/intlTelInput.min.js"></script>
+
+<script>
+  // ---- Initialize Banner Slider ----
+  if (document.getElementById('mainSlider')) {
+    new Glide('#mainSlider', {
+      type: 'carousel',
+      autoplay: 4000,
+      hoverpause: true,
+      animationDuration: 800,
+      animationTimingFunc: 'ease-in-out'
+    }).mount();
+  }
+
+  // ---- Initialize GLightbox ----
+  GLightbox({ selector: '.glightbox' });
+
+  // ---- Set today's min date for site visit ----
+  var dateInput = document.querySelector('input[type="date"]');
+  if (dateInput) {
+    dateInput.min = new Date().toISOString().split('T')[0];
+  }
+
+  // ---- Form Submission via formsubmit.co AJAX ----
+  function submitForm(e, form) {
+    e.preventDefault();
+    var data = new FormData(form);
+    var btn = form.querySelector('button[type="submit"]');
+    var successEl = form.querySelector('.form-success');
+    var origText = btn ? btn.textContent : '';
+
+    if (btn) {
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+    }
+
+    fetch('https://formsubmit.co/ajax/mrunalini.estates@gmail.com', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(json) {
+      if (successEl) {
+        successEl.style.display = 'block';
+      }
+      form.reset();
+      if (btn) {
+        btn.textContent = 'Sent!';
+        setTimeout(function() {
+          btn.textContent = origText;
+          btn.disabled = false;
+          if (successEl) successEl.style.display = 'none';
+        }, 4000);
+      }
+    })
+    .catch(function() {
+      if (btn) {
+        btn.textContent = origText;
+        btn.disabled = false;
+      }
+      alert('Something went wrong. Please call us at 81474 76911');
+    });
+  }
+
+  // ---- WhatsApp float tracking (optional) ----
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'whatsapp_click', { event_category: 'engagement' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
