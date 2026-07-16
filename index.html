@@ -1285,7 +1285,7 @@
       </div>
       <button type="submit" class="btn-cta">Get Best Price</button>
       <p class="form-note">🔒 Your information is 100% secure</p>
-      <div class="form-success" id="sidebarSuccess">Thank you! We'll contact you shortly.</div>
+      <div class="form-success" id="sidebarSuccess">Almost done — tap <strong>Send</strong> in WhatsApp so your enquiry reaches us instantly!</div>
     </form>
 
     <!-- Free Site Visit pickup image -->
@@ -1650,7 +1650,7 @@
           <button type="submit" class="btn-cta">Book Free Site Visit</button>
         </div>
         <p class="form-note">📍 Free pickup and drop service available | 🔒 100% Privacy Guaranteed</p>
-        <div class="form-success" id="svSuccess">Thank you! Our team will contact you to confirm the visit.</div>
+        <div class="form-success" id="svSuccess">Almost done — tap <strong>Send</strong> in WhatsApp to confirm your site visit request!</div>
       </form>
     </section>
 
@@ -1745,7 +1745,7 @@
           </div>
           <button type="submit" class="btn-cta w-100 py-2" style="font-size:15px;border-radius:8px;">Get Best Price</button>
           <p style="font-size:10px;color:#aaa;text-align:center;margin-top:8px;">🔒 Your information is 100% confidential</p>
-          <div class="form-success" id="modalSuccess">Thank you! Our expert will contact you shortly.</div>
+          <div class="form-success" id="modalSuccess">Almost done — tap <strong>Send</strong> in WhatsApp so your enquiry reaches us instantly!</div>
         </form>
       </div>
     </div>
@@ -1778,46 +1778,46 @@
     }
   });
 
-  // ---- Form Submission via formsubmit.co AJAX ----
+  // ---- Lead delivery ----
+  // Primary channel: WhatsApp to 8147476911 — instant, no third-party
+  // activation needed. Email via formsubmit.co is a silent backup that
+  // starts delivering only after its activation link is clicked.
   function submitForm(e, form) {
     e.preventDefault();
     var data = new FormData(form);
     var btn = form.querySelector('button[type="submit"]');
     var successEl = form.querySelector('.form-success');
-    var origText = btn ? btn.textContent : '';
-
-    if (btn) {
-      btn.textContent = 'Submitting...';
-      btn.disabled = true;
-    }
 
     fetch('https://formsubmit.co/ajax/kishanpvt26@gmail.com', {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' }
-    })
-    .then(function(res) { return res.json(); })
-    .then(function(json) {
-      if (successEl) {
-        successEl.style.display = 'block';
-      }
-      form.reset();
-      if (btn) {
-        btn.textContent = 'Sent!';
-        setTimeout(function() {
-          btn.textContent = origText;
-          btn.disabled = false;
-          if (successEl) successEl.style.display = 'none';
-        }, 4000);
-      }
-    })
-    .catch(function() {
-      if (btn) {
+    }).catch(function() {});
+
+    var labels = {
+      name: 'Name', phone: 'Phone', email: 'Email',
+      configuration: 'Interested In', visit_date: 'Visit Date',
+      preferred_time: 'Preferred Time'
+    };
+    var lines = ['New Enquiry - Assetz Miru & Miyo'];
+    Object.keys(labels).forEach(function(field) {
+      var v = data.get(field);
+      if (v) lines.push(labels[field] + ': ' + v);
+    });
+    window.open('https://wa.me/918147476911?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+
+    if (successEl) successEl.style.display = 'block';
+    if (btn) {
+      var origText = btn.textContent;
+      btn.textContent = 'Sent!';
+      btn.disabled = true;
+      setTimeout(function() {
         btn.textContent = origText;
         btn.disabled = false;
-      }
-      alert('Something went wrong. Please call us at 81474 76911');
-    });
+        if (successEl) successEl.style.display = 'none';
+      }, 6000);
+    }
+    form.reset();
   }
 
   // ---- WhatsApp float tracking (optional) ----
