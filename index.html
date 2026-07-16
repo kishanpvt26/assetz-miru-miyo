@@ -6,10 +6,13 @@
   <title>Assetz Miru and Miyo | 3 BHK Apartments | Yelahanka, Bangalore</title>
   <meta name="description" content="Assetz Miru and Miyo - Premium 3 BHK Apartments in Yelahanka, North Bangalore. Starting ₹1.77 Cr. RERA: PRM/KA/RERA/1251/472/PR/050526/008621">
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter (only the 4 weights actually used) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://assetzmirumiyoyelahanka.com">
+  <link rel="preload" as="image" href="https://assetzmirumiyoyelahanka.com/img/webp/aa-b1-768w.webp" media="(max-width: 799px)">
+  <link rel="preload" as="image" href="https://assetzmirumiyoyelahanka.com/img/webp/aa-b1-1400w.webp" media="(min-width: 800px)">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap 5.3.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,9 +26,6 @@
 
   <!-- GLightbox 3.3.0 -->
   <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- intl-tel-input 24.7.0 -->
-  <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/css/intlTelInput.css" rel="stylesheet">
 
   <style>
     /* ===== CSS VARIABLES ===== */
@@ -209,10 +209,21 @@
     .banner .glide__track,
     .banner .glide__slides,
     .banner .glide__slide,
+    .banner .glide__slide picture,
     .banner .glide__slide img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+
+    .banner .glide__slide picture {
+      display: block;
+    }
+
+    /* skip off-screen rendering work for below-fold sections */
+    #masterplan, #amenities, #gallery, #location, #site-visit, #about {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
     }
 
     /* Info box overlaid on banner (desktop) */
@@ -426,14 +437,6 @@
     .sidebar-form select:focus,
     .sidebar-form textarea:focus {
       border-color: var(--clr-p);
-    }
-
-    .sidebar-form .iti {
-      width: 100%;
-    }
-
-    .sidebar-form .iti input {
-      width: 100%;
     }
 
     .sidebar-form .btn-cta {
@@ -863,14 +866,6 @@
       border-color: var(--clr-p);
     }
 
-    .sv-form .iti {
-      width: 100%;
-    }
-
-    .sv-form .iti input {
-      width: 100%;
-    }
-
     .sv-form .submit-row {
       text-align: center;
       margin-top: 15px;
@@ -1138,7 +1133,6 @@
   <!-- ========== NAV ========== -->
   <nav class="lp-nav">
     <div class="brand">
-      <img src="https://assetzmirumiyoyelahanka.com/img/logo.png" alt="Assetz Miru and Miyo" onerror="this.style.display='none'">
       <div>
         <div class="brand-text">Assetz Miru &amp; Miyo</div>
         <div class="brand-sub">Yelahanka, Bangalore</div>
@@ -1168,16 +1162,19 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <li class="glide__slide">
-              <img src="https://assetzmirumiyoyelahanka.com/img/banner1.jpg" alt="Assetz Miru and Miyo Banner 1" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner.jpg'">
+              <picture>
+                <source media="(min-width: 800px)" srcset="https://assetzmirumiyoyelahanka.com/img/webp/aa-b1-1400w.webp">
+                <img src="https://assetzmirumiyoyelahanka.com/img/webp/aa-b1-768w.webp" alt="Assetz Miru and Miyo Elevation" fetchpriority="high" decoding="async">
+              </picture>
             </li>
             <li class="glide__slide">
-              <img src="https://assetzmirumiyoyelahanka.com/img/banner2.jpg" alt="Assetz Miru and Miyo Banner 2" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner1.jpg'">
+              <img src="https://assetzmirumiyoyelahanka.com/img/banner1.jpg" alt="Assetz Miru and Miyo Towers" loading="lazy" decoding="async">
             </li>
             <li class="glide__slide">
-              <img src="https://assetzmirumiyoyelahanka.com/img/banner3.jpg" alt="Assetz Miru and Miyo Banner 3" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner2.jpg'">
+              <img src="https://assetzmirumiyoyelahanka.com/img/banner2.jpg" alt="Assetz Miru and Miyo Aerial View" loading="lazy" decoding="async">
             </li>
             <li class="glide__slide">
-              <img src="https://assetzmirumiyoyelahanka.com/img/banner4.jpg" alt="Assetz Miru and Miyo Banner 4" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner3.jpg'">
+              <img src="https://assetzmirumiyoyelahanka.com/img/clubhouse-768w.jpg" alt="Assetz Miru and Miyo Clubhouse" loading="lazy" decoding="async">
             </li>
           </ul>
         </div>
@@ -1294,9 +1291,8 @@
     <!-- Free Site Visit pickup image -->
     <div class="sidebar-pickup">
       <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-        <img src="https://assetzmirumiyoyelahanka.com/img/free-site-visit.jpg"
-             alt="Free Site Visit Pickup"
-             onerror="this.parentElement.innerHTML='<div class=\'text-center p-3 bg-light rounded\' style=\'font-size:13px;color:var(--clr-p);font-weight:600;\'>📍 Free Site Visit Available<br><small>We pick you up & drop you off</small></div>'">
+        <img src="https://s3.ap-south-1.amazonaws.com/microsites.images/temp_assets/temp-xi/img/pnd.webp"
+             alt="Free Pick Up and Drop for Site Visit" loading="lazy" decoding="async">
       </a>
     </div>
   </aside>
@@ -1478,7 +1474,7 @@
       <div class="row g-3">
         <div class="col-12 col-sm-6">
           <div class="bd-img-wrap">
-            <img src="https://assetzmirumiyoyelahanka.com/img/floorplan1.jpg" class="bd-img blur" alt="3 BHK Floor Plan Type A" onerror="this.src='https://via.placeholder.com/600x400?text=Floor+Plan+A'">
+            <img src="https://assetzmirumiyoyelahanka.com/img/upload_d47e68ec1362_gnao-1400w.jpg" class="bd-img blur" alt="3 BHK Floor Plan Type A" loading="lazy" decoding="async">
             <div class="cta-text">
               <h4>3 BHK — Type A Floor Plan</h4>
               <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta">Download Floor Plan</a>
@@ -1487,7 +1483,7 @@
         </div>
         <div class="col-12 col-sm-6">
           <div class="bd-img-wrap">
-            <img src="https://assetzmirumiyoyelahanka.com/img/floorplan2.jpg" class="bd-img blur" alt="3 BHK Floor Plan Type B" onerror="this.src='https://via.placeholder.com/600x400?text=Floor+Plan+B'">
+            <img src="https://assetzmirumiyoyelahanka.com/img/upload_3f762dd12b85_6mv4.jpg" class="bd-img blur" alt="3 BHK Floor Plan Type B" loading="lazy" decoding="async">
             <div class="cta-text">
               <h4>3 BHK — Type B Floor Plan</h4>
               <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta">Download Floor Plan</a>
@@ -1508,7 +1504,7 @@
       <h2 class="section-title">Master Plan</h2>
       <p class="section-sub">Thoughtfully planned layout for maximum space utilization and greenery.</p>
       <div class="bd-img-wrap">
-        <img src="https://assetzmirumiyoyelahanka.com/img/masterplan.jpg" class="bd-img blur" alt="Assetz Miru Miyo Master Plan" onerror="this.src='https://via.placeholder.com/900x500?text=Master+Plan'">
+        <img src="https://assetzmirumiyoyelahanka.com/img/masterplan.jpg" class="bd-img blur" alt="Assetz Miru Miyo Master Plan" loading="lazy" decoding="async">
         <div class="cta-text">
           <h4>View Master Plan</h4>
           <a href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="btn-cta">Download Master Plan</a>
@@ -1521,18 +1517,18 @@
       <h2 class="section-title">World-Class Amenities</h2>
       <p class="section-sub">60+ amenities designed for a premium lifestyle.</p>
       <div class="amenity-grid">
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/clubhouse.png" alt="Clubhouse" onerror="this.style.display='none'"><i class="ri-community-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Clubhouse</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/pool.png" alt="Swimming Pool" onerror="this.style.display='none'"><i class="ri-water-percent-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Swimming Pool</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/gym.png" alt="Gym" onerror="this.style.display='none'"><i class="ri-run-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Gymnasium</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/kids.png" alt="Kids Play Area" onerror="this.style.display='none'"><i class="ri-user-smile-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Kids Play</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/badminton.png" alt="Badminton" onerror="this.style.display='none'"><i class="ri-tennis-ball-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Badminton</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/jogging.png" alt="Jogging Track" onerror="this.style.display='none'"><i class="ri-footprint-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Jogging Track</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/garden.png" alt="Garden" onerror="this.style.display='none'"><i class="ri-plant-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Landscape Garden</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/yoga.png" alt="Yoga" onerror="this.style.display='none'"><i class="ri-heart-pulse-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Yoga Deck</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/indoor.png" alt="Indoor Games" onerror="this.style.display='none'"><i class="ri-gamepad-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Indoor Games</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/party.png" alt="Party Hall" onerror="this.style.display='none'"><i class="ri-goblet-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Party Hall</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/library.png" alt="Library" onerror="this.style.display='none'"><i class="ri-book-open-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Library</div></div>
-        <div class="am-item"><img src="https://assetzmirumiyoyelahanka.com/img/amenities/basketball.png" alt="Basketball" onerror="this.style.display='none'"><i class="ri-basketball-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Basketball</div></div>
+        <div class="am-item"><i class="ri-community-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Clubhouse</div></div>
+        <div class="am-item"><i class="ri-water-percent-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Swimming Pool</div></div>
+        <div class="am-item"><i class="ri-run-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Gymnasium</div></div>
+        <div class="am-item"><i class="ri-user-smile-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Kids Play</div></div>
+        <div class="am-item"><i class="ri-tennis-ball-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Badminton</div></div>
+        <div class="am-item"><i class="ri-footprint-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Jogging Track</div></div>
+        <div class="am-item"><i class="ri-plant-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Landscape Garden</div></div>
+        <div class="am-item"><i class="ri-heart-pulse-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Yoga Deck</div></div>
+        <div class="am-item"><i class="ri-gamepad-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Indoor Games</div></div>
+        <div class="am-item"><i class="ri-goblet-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Party Hall</div></div>
+        <div class="am-item"><i class="ri-book-open-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Library</div></div>
+        <div class="am-item"><i class="ri-basketball-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Basketball</div></div>
         <div class="am-item"><i class="ri-car-washing-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Car Washing Bay</div></div>
         <div class="am-item"><i class="ri-video-chat-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Mini Theatre</div></div>
         <div class="am-item"><i class="ri-store-2-line" style="font-size:32px;color:var(--clr-p)"></i><div class="am-name">Convenience Store</div></div>
@@ -1547,23 +1543,23 @@
       <h2 class="section-title">Photo Gallery</h2>
       <p class="section-sub">Take a visual tour of Assetz Miru &amp; Miyo.</p>
       <div class="gallery-grid">
-        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g1.jpg" class="glightbox" data-gallery="gallery1" data-title="Assetz Miru Miyo">
-          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g1.jpg" alt="Gallery 1" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner1.jpg'">
+        <a href="https://assetzmirumiyoyelahanka.com/img/clubhouse-768w.jpg" class="glightbox" data-gallery="gallery1" data-title="Clubhouse">
+          <img src="https://assetzmirumiyoyelahanka.com/img/clubhouse-768w.jpg" alt="Clubhouse" loading="lazy" decoding="async">
         </a>
-        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g2.jpg" class="glightbox" data-gallery="gallery1" data-title="Clubhouse">
-          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g2.jpg" alt="Gallery 2" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner2.jpg'">
+        <a href="https://assetzmirumiyoyelahanka.com/img/swimmingpool-768w.jpg" class="glightbox" data-gallery="gallery1" data-title="Swimming Pool">
+          <img src="https://assetzmirumiyoyelahanka.com/img/swimmingpool-768w.jpg" alt="Swimming Pool" loading="lazy" decoding="async">
         </a>
-        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g3.jpg" class="glightbox" data-gallery="gallery1" data-title="Swimming Pool">
-          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g3.jpg" alt="Gallery 3" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner3.jpg'">
+        <a href="https://assetzmirumiyoyelahanka.com/img/gymnasium-768w.jpg" class="glightbox" data-gallery="gallery1" data-title="Gymnasium">
+          <img src="https://assetzmirumiyoyelahanka.com/img/gymnasium-768w.jpg" alt="Gymnasium" loading="lazy" decoding="async">
         </a>
-        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g4.jpg" class="glightbox" data-gallery="gallery1" data-title="Apartment Interior">
-          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g4.jpg" alt="Gallery 4" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner4.jpg'">
+        <a href="https://assetzmirumiyoyelahanka.com/img/childrenplayarea-768w.jpg" class="glightbox" data-gallery="gallery1" data-title="Children's Play Area">
+          <img src="https://assetzmirumiyoyelahanka.com/img/childrenplayarea-768w.jpg" alt="Children's Play Area" loading="lazy" decoding="async">
         </a>
-        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g5.jpg" class="glightbox" data-gallery="gallery1" data-title="Garden Area">
-          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g5.jpg" alt="Gallery 5" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner1.jpg'">
+        <a href="https://assetzmirumiyoyelahanka.com/img/party_lawn_j658-768w.jpg" class="glightbox" data-gallery="gallery1" data-title="Party Lawn">
+          <img src="https://assetzmirumiyoyelahanka.com/img/party_lawn_j658-768w.jpg" alt="Party Lawn" loading="lazy" decoding="async">
         </a>
-        <a href="https://assetzmirumiyoyelahanka.com/img/gallery/g6.jpg" class="glightbox" data-gallery="gallery1" data-title="Lobby">
-          <img src="https://assetzmirumiyoyelahanka.com/img/gallery/g6.jpg" alt="Gallery 6" onerror="this.src='https://assetzmirumiyoyelahanka.com/img/banner2.jpg'">
+        <a href="https://assetzmirumiyoyelahanka.com/img/yoga___meditation_deck_ewo7-768w.jpg" class="glightbox" data-gallery="gallery1" data-title="Yoga & Meditation Deck">
+          <img src="https://assetzmirumiyoyelahanka.com/img/yoga___meditation_deck_ewo7-768w.jpg" alt="Yoga and Meditation Deck" loading="lazy" decoding="async">
         </a>
       </div>
     </section>
@@ -1756,39 +1752,31 @@
   </div>
 </div>
 
-<!-- ========== SCRIPTS ========== -->
-<!-- Bootstrap 5.3.3 JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Glide.js 3.6.2 -->
-<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js"></script>
-
-<!-- GLightbox 3.3.0 -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
-
-<!-- intl-tel-input 24.7.0 -->
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/intlTelInput.min.js"></script>
+<!-- ========== SCRIPTS (all deferred — don't block first paint) ========== -->
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
 
 <script>
-  // ---- Initialize Banner Slider ----
-  if (document.getElementById('mainSlider')) {
-    new Glide('#mainSlider', {
-      type: 'carousel',
-      autoplay: 4000,
-      hoverpause: true,
-      animationDuration: 800,
-      animationTimingFunc: 'ease-in-out'
-    }).mount();
-  }
+  // deferred libs finish before DOMContentLoaded, so init here
+  window.addEventListener('DOMContentLoaded', function () {
+    if (document.getElementById('mainSlider')) {
+      new Glide('#mainSlider', {
+        type: 'carousel',
+        autoplay: 4000,
+        hoverpause: true,
+        animationDuration: 800,
+        animationTimingFunc: 'ease-in-out'
+      }).mount();
+    }
 
-  // ---- Initialize GLightbox ----
-  GLightbox({ selector: '.glightbox' });
+    GLightbox({ selector: '.glightbox' });
 
-  // ---- Set today's min date for site visit ----
-  var dateInput = document.querySelector('input[type="date"]');
-  if (dateInput) {
-    dateInput.min = new Date().toISOString().split('T')[0];
-  }
+    var dateInput = document.querySelector('input[type="date"]');
+    if (dateInput) {
+      dateInput.min = new Date().toISOString().split('T')[0];
+    }
+  });
 
   // ---- Form Submission via formsubmit.co AJAX ----
   function submitForm(e, form) {
