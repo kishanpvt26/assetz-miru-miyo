@@ -1261,8 +1261,6 @@
 
     <form class="sidebar-form" id="sidebarForm" onsubmit="submitForm(event, this)">
       <input type="hidden" name="_subject" value="New Lead - Assetz Miru Miyo">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
 
       <div class="form-group">
         <input type="text" name="name" placeholder="Full Name *" required>
@@ -1285,7 +1283,7 @@
       </div>
       <button type="submit" class="btn-cta">Get Best Price</button>
       <p class="form-note">🔒 Your information is 100% secure</p>
-      <div class="form-success" id="sidebarSuccess">Almost done — tap <strong>Send</strong> in WhatsApp so your enquiry reaches us instantly!</div>
+      <div class="form-success" id="sidebarSuccess">Thank you! We'll contact you shortly.</div>
     </form>
 
     <!-- Free Site Visit pickup image -->
@@ -1623,8 +1621,6 @@
 
       <form class="sv-form" id="siteVisitForm" onsubmit="submitForm(event, this)">
         <input type="hidden" name="_subject" value="Site Visit Request - Assetz Miru Miyo">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
 
         <div class="form-row mb-3">
           <input type="text" name="name" placeholder="Full Name *" required>
@@ -1650,7 +1646,7 @@
           <button type="submit" class="btn-cta">Book Free Site Visit</button>
         </div>
         <p class="form-note">📍 Free pickup and drop service available | 🔒 100% Privacy Guaranteed</p>
-        <div class="form-success" id="svSuccess">Almost done — tap <strong>Send</strong> in WhatsApp to confirm your site visit request!</div>
+        <div class="form-success" id="svSuccess">Thank you! Our team will contact you to confirm the visit.</div>
       </form>
     </section>
 
@@ -1725,8 +1721,6 @@
         <p style="font-size:13px;color:#555;margin-bottom:15px;">Fill in the details below and our expert will contact you within 30 minutes.</p>
         <form id="modalForm" onsubmit="submitForm(event, this)">
           <input type="hidden" name="_subject" value="Enquiry - Assetz Miru Miyo">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
 
           <div class="mb-3">
             <input type="text" name="name" class="form-control" placeholder="Full Name *" required style="border-radius:8px;font-family:var(--font);">
@@ -1745,7 +1739,7 @@
           </div>
           <button type="submit" class="btn-cta w-100 py-2" style="font-size:15px;border-radius:8px;">Get Best Price</button>
           <p style="font-size:10px;color:#aaa;text-align:center;margin-top:8px;">🔒 Your information is 100% confidential</p>
-          <div class="form-success" id="modalSuccess">Almost done — tap <strong>Send</strong> in WhatsApp so your enquiry reaches us instantly!</div>
+          <div class="form-success" id="modalSuccess">Thank you! Our expert will contact you shortly.</div>
         </form>
       </div>
     </div>
@@ -1778,46 +1772,85 @@
     }
   });
 
-  // ---- Lead delivery ----
-  // Primary channel: WhatsApp to 8147476911 — instant, no third-party
-  // activation needed. Email via formsubmit.co is a silent backup that
-  // starts delivering only after its activation link is clicked.
+  // ---- Lead delivery: Google Apps Script webhook ----
+  // Same backend as the Sobha One Residences page: the script emails each
+  // lead to the inbox and appends a row to a Google Sheet in Drive.
+  var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyMp2IEHbvwIoFkd5Zm77XVRYj0gJHgmIgccSlUzPBuAwxkdJB1rJ1cwO6d5yvO6LZx/exec';
+
+  // capture UTM/gclid once per visit so the sheet shows which ad brought the lead
+  var TRACKED_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term',
+                        'utm_content', 'gclid', 'gad_source', 'gad_campaignid', 'gbraid'];
+  function captureAttribution() {
+    var params = new URLSearchParams(window.location.search);
+    var stored = {};
+    try { stored = JSON.parse(sessionStorage.getItem('attribution') || '{}'); } catch (e) { /* corrupted storage — start fresh */ }
+    TRACKED_PARAMS.forEach(function(key) {
+      var v = params.get(key);
+      if (v) stored[key] = v;
+    });
+    try { sessionStorage.setItem('attribution', JSON.stringify(stored)); } catch (e) { /* storage blocked — non-fatal */ }
+    return stored;
+  }
+  var leadAttribution = captureAttribution();
+
   function submitForm(e, form) {
     e.preventDefault();
     var data = new FormData(form);
     var btn = form.querySelector('button[type="submit"]');
     var successEl = form.querySelector('.form-success');
+    var origText = btn ? btn.textContent : '';
 
-    fetch('https://formsubmit.co/ajax/kishanpvt26@gmail.com', {
+    // fold site-visit details into formName so they survive the shared webhook,
+    // whose email/sheet columns only carry name/phone/email/form/source
+    var formName = data.get('_subject') || 'Enquiry - Assetz Miru Miyo';
+    if (data.get('configuration')) formName += ' | ' + data.get('configuration');
+    if (data.get('visit_date')) formName += ' | Visit: ' + data.get('visit_date');
+    if (data.get('preferred_time')) formName += ' ' + data.get('preferred_time');
+
+    var lead = Object.assign({
+      name: (data.get('name') || '').trim(),
+      email: (data.get('email') || '').trim(),
+      countrycode: '+91',
+      mobile: (data.get('phone') || '').replace(/\D/g, ''),
+      formName: formName,
+      source: 'Assetz Miru Miyo Landing Page',
+      submitted_at: new Date().toISOString(),
+      page: window.location.href
+    }, leadAttribution);
+
+    if (btn) { btn.textContent = 'Submitting...'; btn.disabled = true; }
+
+    // client-side backup so no lead is ever lost
+    try {
+      var backlog = JSON.parse(localStorage.getItem('leadBacklog') || '[]');
+      backlog.push(lead);
+      localStorage.setItem('leadBacklog', JSON.stringify(backlog));
+    } catch (err) { /* storage blocked — continue */ }
+
+    // text/plain avoids the CORS preflight Apps Script can't answer;
+    // 5s cap so a hung endpoint never traps the visitor on the form
+    var controller = new AbortController();
+    var abortTimer = setTimeout(function() { controller.abort(); }, 5000);
+    fetch(LEAD_ENDPOINT, {
       method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).catch(function() {});
-
-    var labels = {
-      name: 'Name', phone: 'Phone', email: 'Email',
-      configuration: 'Interested In', visit_date: 'Visit Date',
-      preferred_time: 'Preferred Time'
-    };
-    var lines = ['New Enquiry - Assetz Miru & Miyo'];
-    Object.keys(labels).forEach(function(field) {
-      var v = data.get(field);
-      if (v) lines.push(labels[field] + ': ' + v);
-    });
-    window.open('https://wa.me/918147476911?text=' + encodeURIComponent(lines.join('\n')), '_blank');
-
-    if (successEl) successEl.style.display = 'block';
-    if (btn) {
-      var origText = btn.textContent;
-      btn.textContent = 'Sent!';
-      btn.disabled = true;
-      setTimeout(function() {
-        btn.textContent = origText;
-        btn.disabled = false;
-        if (successEl) successEl.style.display = 'none';
-      }, 6000);
-    }
-    form.reset();
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(lead),
+      keepalive: true,
+      signal: controller.signal
+    }).catch(function() { /* lead is in the backlog; don't block the visitor */ })
+      .finally(function() {
+        clearTimeout(abortTimer);
+        if (successEl) successEl.style.display = 'block';
+        if (btn) {
+          btn.textContent = 'Sent!';
+          setTimeout(function() {
+            btn.textContent = origText;
+            btn.disabled = false;
+            if (successEl) successEl.style.display = 'none';
+          }, 5000);
+        }
+        form.reset();
+      });
   }
 
   // ---- WhatsApp float tracking (optional) ----
