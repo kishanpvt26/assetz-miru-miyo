@@ -19,7 +19,8 @@
  *  5. Replace LEAD_ENDPOINT in index.html with that URL — done.
  */
 
-var NOTIFY_EMAIL = "kishanpvt26@gmail.com";
+// comma-separated list — every address here receives each lead
+var NOTIFY_EMAIL = "kishanpvt26@gmail.com,mrunalini.estates@gmail.com";
 var SHEET_NAME = "Assetz Miru Miyo Leads";
 var PROJECT_LABEL = "Assetz Miru & Miyo";
 
